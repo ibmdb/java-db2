@@ -79,7 +79,37 @@ public class Db2Configuration {
     	if(config.getPassword() != null ){
     		propertyAccessor.setPropertyValue("password", config.getPassword());
     	}
+ 
+    	if(config.getTraceFile() != null ){
+    		propertyAccessor.setPropertyValue("traceFile", config.getTraceFile());
+    	}
     	
+    	if(config.getTraceLevel() != null ){
+    		try{
+    			propertyAccessor.setPropertyValue("traceLevel", new Integer(Integer.parseInt(config.getTraceLevel())));
+    		}catch(NumberFormatException e){}
+    	}
+    	if(config.getTraceOption() != null ){
+    		try{
+    			propertyAccessor.setPropertyValue("traceOption", new Integer(Integer.parseInt(config.getTraceOption())));
+    		}catch(NumberFormatException e){}
+    	}    	
+    	if(config.getTraceFileSize() != null ){
+    		try{
+    			propertyAccessor.setPropertyValue("traceFileSize", new Integer(Integer.parseInt(config.getTraceFileSize())));
+    		}catch(NumberFormatException e){}
+    	}    	
+    	if(config.getTraceFileCount() != null ){
+    		try{
+    			propertyAccessor.setPropertyValue("traceFileCount", new Integer(Integer.parseInt(config.getTraceFileCount())));
+    		}catch(NumberFormatException e){}
+    	}     	
+    	
+    	if(config.getEnableSysplexWLB() != null ){
+    		try{
+    			propertyAccessor.setPropertyValue("enableSysplexWLB", new Boolean(Boolean.parseBoolean(config.getEnableSysplexWLB())));
+    		}catch(NumberFormatException e){}
+    	}    	
     }
 
 

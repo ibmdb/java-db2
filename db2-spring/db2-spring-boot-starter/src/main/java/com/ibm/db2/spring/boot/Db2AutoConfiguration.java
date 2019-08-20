@@ -57,7 +57,15 @@ public class Db2AutoConfiguration {
     	setProperties(dataSource);
     	return dataSource;
     }
-	
+    @Bean
+    @ConfigurationProperties(prefix = "db2")
+    @ConditionalOnMissingBean({ DB2SimpleDataSource.class})
+    public DataSource getDB2ExtraSimpleDataSource() throws ClassNotFoundException{
+    	loadDb2DriverJar();
+    	DataSource dataSource =  new DB2SimpleDataSource();
+    	setProperties(dataSource);
+    	return dataSource;
+    }	
     
     private void setProperties(Object ds){
     	
@@ -87,6 +95,36 @@ public class Db2AutoConfiguration {
     		propertyAccessor.setPropertyValue("password", config.getPassword());
     	}
     	
+    	if(config.getTraceFile() != null ){
+    		propertyAccessor.setPropertyValue("traceFile", config.getTraceFile());
+    	}
+    	
+    	if(config.getTraceLevel() != null ){
+    		try{
+    			propertyAccessor.setPropertyValue("traceLevel", new Integer(Integer.parseInt(config.getTraceLevel())));
+    		}catch(NumberFormatException e){}
+    	}
+    	if(config.getTraceOption() != null ){
+    		try{
+    			propertyAccessor.setPropertyValue("traceOption", new Integer(Integer.parseInt(config.getTraceOption())));
+    		}catch(NumberFormatException e){}
+    	}    	
+    	if(config.getTraceFileSize() != null ){
+    		try{
+    			propertyAccessor.setPropertyValue("traceFileSize", new Integer(Integer.parseInt(config.getTraceFileSize())));
+    		}catch(NumberFormatException e){}
+    	}    	
+    	if(config.getTraceFileCount() != null ){
+    		try{
+    			propertyAccessor.setPropertyValue("traceFileCount", new Integer(Integer.parseInt(config.getTraceFileCount())));
+    		}catch(NumberFormatException e){}
+    	}  
+    	
+    	if(config.getEnableSysplexWLB() != null ){
+    		try{
+    			propertyAccessor.setPropertyValue("enableSysplexWLB", new Boolean(Boolean.parseBoolean(config.getEnableSysplexWLB())));
+    		}catch(NumberFormatException e){}
+    	}  
     }
     
 

@@ -34,8 +34,70 @@ public class Db2ConfigurationProperties {
     /** Db2 database name */
     private String databaseName;
     
+    /** Db2 traceFile name */
+    private String traceFile; 
+    /** Db2 traceFile Level */
+    private String traceLevel;
+    /** Db2 traceFile Option */
+    private String traceOption;
+    /** Db2 traceFile Size */
+    private String traceFileSize;
+    /** Db2 traceFile Count */
+    private String traceFileCount;
+    /** Db2 enableSysplexWLB */
+    private String enableSysplexWLB;
+   
     
-    /** Db2 Jcc Global Property File to specify Db2 Jcc driver properties*/
+    
+	public String getEnableSysplexWLB() {
+		return enableSysplexWLB;
+	}
+
+	public void setEnableSysplexWLB(String enableSysplexWLB) {
+		this.enableSysplexWLB = enableSysplexWLB;
+	}
+
+	public String getTraceFile() {
+		return traceFile;
+	}
+
+	public void setTraceFile(String traceFile) {
+		this.traceFile = traceFile;
+	}
+
+	public String getTraceLevel() {
+		return traceLevel;
+	}
+
+	public void setTraceLevel(String traceLevel) {
+		this.traceLevel = traceLevel;
+	}
+
+	public String getTraceOption() {
+		return traceOption;
+	}
+
+	public void setTraceOption(String traceOption) {
+		this.traceOption = traceOption;
+	}
+
+	public String getTraceFileSize() {
+		return traceFileSize;
+	}
+
+	public void setTraceFileSize(String traceFileSize) {
+		this.traceFileSize = traceFileSize;
+	}
+	
+    public String getTraceFileCount() {
+		return traceFileCount;
+	}
+
+	public void setTraceFileCount(String traceFileCount) {
+		this.traceFileCount = traceFileCount;
+	}
+	
+	/** Db2 Jcc Global Property File to specify Db2 Jcc driver properties*/
     private String globalPropertyFile;
     
 	
