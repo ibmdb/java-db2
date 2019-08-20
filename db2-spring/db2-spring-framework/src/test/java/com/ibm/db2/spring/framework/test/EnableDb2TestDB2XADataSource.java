@@ -22,7 +22,7 @@ import javax.sql.XADataSource;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.boot.test.util.EnvironmentTestUtils;
+import org.springframework.boot.test.util.TestPropertyValues;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -66,13 +66,9 @@ public class EnableDb2TestDB2XADataSource {
     @Test
     public void xaDataSourceCreation() {
     	this.context.register(MockDb2XADataSourceConfig.class);
-    	
-    	EnvironmentTestUtils.addEnvironment(this.context, "db2.serverName=localhost");
-    	EnvironmentTestUtils.addEnvironment(this.context, "db2.portNumber=50000");
-    	EnvironmentTestUtils.addEnvironment(this.context, "db2.databaseName=sample");
-    	EnvironmentTestUtils.addEnvironment(this.context, "db2.user=<db2_user>");
-    	EnvironmentTestUtils.addEnvironment(this.context, "db2.password=<db2_password>");
-    	EnvironmentTestUtils.addEnvironment(this.context, "db2.globalPropertyFile=<Absolute_Path_Of_Jcc_Global_Properties_File>");
+    	TestPropertyValues.of("db2.serverName=localhost", "db2.portNumber=50000")
+        .and("db2.databaseName=SAMPLE").and("db2.user=db2admin").and("db2.password=abcd_abcd_01")
+        .applyTo(this.context);    	
     	
     	this.context.refresh();
     	
