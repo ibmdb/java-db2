@@ -57,15 +57,6 @@ public class Db2AutoConfiguration {
     	setProperties(dataSource);
     	return dataSource;
     }
-    @Bean
-    @ConfigurationProperties(prefix = "db2")
-    @ConditionalOnMissingBean({ DB2SimpleDataSource.class})
-    public DataSource getDB2ExtraSimpleDataSource() throws ClassNotFoundException{
-    	loadDb2DriverJar();
-    	DataSource dataSource =  new DB2SimpleDataSource();
-    	setProperties(dataSource);
-    	return dataSource;
-    }	
     
     private void setProperties(Object ds){
     	
