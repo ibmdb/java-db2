@@ -82,7 +82,8 @@ Optional property:
 * `db2.traceFileSize`
 * `db2.traceFileCount`
 * `db2.enableSysplexWLB`
-This is an Optional property to specify the absolute path of the property file in which _driver-wide scope_ configuration properties are defined.
+
+These are optional property to specify the absolute path of the property file in which _driver-wide scope_ configuration properties are defined.
 For more information refer [this](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.apdv.java.doc/src/tpc/imjcc_r0052075.html)
 
 For example in an `application.properties` file:
@@ -138,7 +139,8 @@ Optional property:
 * `db2.traceFileSize`
 * `db2.traceFileCount`
 * `db2.enableSysplexWLB`
-This is an Optional property to specify the absolute path of the property file in which _driver-wide scope_ configuration properties are defined.
+
+These are optional property to specify the absolute path of the property file in which _driver-wide scope_ configuration properties are defined.
 For more information refer [this](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.apdv.java.doc/src/tpc/imjcc_r0052075.html)
 
 
