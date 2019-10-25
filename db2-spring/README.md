@@ -22,17 +22,19 @@ The library is split into two parts:
 
 ### Spring Boot Applications
 
+Use the repository URL "http://repo.maven.apache.org/maven2" to get the jars from maven repository.
+
 Gradle:
 ```groovy
 dependencies {
-    compile group: 'com.db2', name: 'db2-spring-boot-starter', version: '0.0.1'
+    compile group: 'com.ibm.db2.jcc', name: 'db2-spring-boot-starter', version: '0.0.1'
 }
 ```
 
 Maven:
 ~~~ xml
 <dependency>
-  <groupId>com.db2</groupId>
+  <groupId>com.ibm.db2.jcc</groupId>
   <artifactId>db2-spring-boot-starter</artifactId>
   <version>0.0.1</version>
 </dependency>
@@ -40,17 +42,19 @@ Maven:
 
 ### Spring Framework Applications
 
+Use the repository URL "http://repo.maven.apache.org/maven2" to get the jars from maven repository.
+
 Gradle:
 ```groovy
 dependencies {
-    compile group: 'com.db2', name: 'db2-spring-framework', version: '0.0.1'
+    compile group: 'com.ibm.db2.jcc', name: 'db2-spring-framework', version: '0.0.1'
 }
 ```
 
 Maven:
 ~~~ xml
 <dependency>
-  <groupId>com.db2</groupId>
+  <groupId>com.ibm.db2.jcc</groupId>
   <artifactId>db2-spring-framework</artifactId>
   <version>0.0.1</version>
 </dependency>
@@ -70,9 +74,14 @@ To enable auto-configuration you must provide the following properties to define
 * `db2.password`
 * `db2.databaseName`
 
-
 Optional property:
 * `db2.globalPropertyFile`
+* `db2.traceFile`
+* `db2.traceLevel`
+* `db2.traceOption`
+* `db2.traceFileSize`
+* `db2.traceFileCount`
+* `db2.enableSysplexWLB`
 This is an Optional property to specify the absolute path of the property file in which _driver-wide scope_ configuration properties are defined.
 For more information refer [this](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.apdv.java.doc/src/tpc/imjcc_r0052075.html)
 
@@ -121,9 +130,14 @@ You must provide the following properties to define the connection to your Db2 i
 * `db2.password`
 * `db2.databaseName`
 
-
 Optional property:
 * `db2.globalPropertyFile`
+* `db2.traceFile`
+* `db2.traceLevel`
+* `db2.traceOption`
+* `db2.traceFileSize`
+* `db2.traceFileCount`
+* `db2.enableSysplexWLB`
 This is an Optional property to specify the absolute path of the property file in which _driver-wide scope_ configuration properties are defined.
 For more information refer [this](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.apdv.java.doc/src/tpc/imjcc_r0052075.html)
 
